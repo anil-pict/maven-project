@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mv clean package'
+				sh 'mvn clean package'
 				sh 'docker build -t mytomcatwebapp:${BUILD_ID} .'
 			}	
 		}
