@@ -4,8 +4,8 @@ pipeline {
 	stages {
 		stage('---Build---') {
 			steps {
-				echo 'Building...Please wait....'
 				sh 'mvn clean package'
+				sh 'docker image build -t tomcat{$BUILD_NUMBER}'
 			}
 		}
 	}
