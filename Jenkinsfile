@@ -1,11 +1,11 @@
 pipeline {
-	agent any
+	agent any 
+
 	stages {
-		stage('Build') {
-			steps {
+		stage('---Build---') {
+			step {
 				sh 'mvn clean package'
-				sh 'docker build -t mytomcatwebapp:${BUILD_ID} .'
-			}	
+			}
 		}
 	}
 }
